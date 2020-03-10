@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markdown Editor</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/marked@0.3.6"></script>
+    <script src="https://unpkg.com/lodash@4.16.0"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+  <body style="background-color:azure">
+    <div id="app">
+      <p>Merhaba! Ben {{isim}} {{soyisim}};</p>
+      <p>{{ message}} {{lol}}</p>
+    </div>
+    <button onclick="deistir()">bas</button>
+    <script>
+      var apep = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+          lol: "LOL",
+          isim: "burak",
+          soyisim: "ruzgar"
+        }
+      });
+      function deistir() {
+        apep.message = "selams Vue!";
+        Vue.set(apep, "lol", "HAHA");
+      }
+    </script>
+  </body>
+</html>
